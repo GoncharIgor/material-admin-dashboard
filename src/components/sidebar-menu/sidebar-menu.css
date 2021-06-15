@@ -1,0 +1,29 @@
+.sidebar-menu {
+    margin-bottom: 10px;
+}
+
+.sidebar-menu__title {
+    font-size: 13px;
+    color: rgb(187, 186, 186);
+}
+
+.sidebar-menu__list {
+    list-style: none;
+    padding: 5px;
+}
+
+.sidebar-menu__list-item {
+    padding: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.sidebar-menu__list-item.active, .sidebar-menu__list-item:hover {
+    background-color: rgb(240,240,255);
+}
+
+.sidebar-menu__icon {
+    margin-right: 5px;
+}

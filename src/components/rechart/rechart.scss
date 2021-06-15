@@ -1,0 +1,12 @@
+@use "../../styles/mixins";
+
+.chart {
+    @include mixins.shadowBox;
+
+    margin: 20px;
+    padding: 20px;
+}
+
+.chart__title {
+    margin-bottom: 20px;
+}
