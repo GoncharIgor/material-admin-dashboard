@@ -1,7 +1,19 @@
 @use "../../styles/mixins";
 
 .widget-small {
-    @include mixins.shadowBox;
-    flex: 1;
-    padding: 20px;
+  @include mixins.shadowBox;
+  flex: 1;
+  padding: 20px;
+  margin-right: 20px;
+
+  &__title {
+    font-size: 22px;
+    font-weight: 600;
+  }
+
+  &__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
 }

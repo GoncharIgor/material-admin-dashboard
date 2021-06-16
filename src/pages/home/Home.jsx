@@ -33,11 +33,11 @@ const userData = [
 export default function Home() {
     return (
         <div className="home">
-           <FeaturedInfo />
+            <FeaturedInfo/>
             <ReChart data={userData} title="User Analytics" dataKey="Active User"/>
             <div className="home__widgets">
-                <WidgetSmall />
-                <WidgetLarge />
+                <WidgetSmall/>
+                <WidgetLarge/>
             </div>
         </div>
     )
