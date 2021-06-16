@@ -1,21 +1,22 @@
-import {LineStyle, Timeline, TrendingUp} from '@material-ui/icons';
-
 import './sidebar-menu.css';
 
-export default function SidebarMenu (props) {
+export default function SidebarMenu ({title, menuItems}) {
+    function renderListItems() {
+        return menuItems.map(item => {
+            const MaterialIcon = item.icon;
+
+            return (
+                <li className={`sidebar-menu__list-item ${item.name === 'Home' ? 'active' : ''}`} key={item.name}>
+                    <MaterialIcon className="sidebar-menu__icon" fontSize="small" /> {item.name}
+                </li>
+            )
+        })
+    }
     return (
         <div className="sidebar-menu">
-            <h3 className="sidebar-menu__title">{props.title}</h3>
+            <h3 className="sidebar-menu__title">{title}</h3>
             <ul className="sidebar-menu__list">
-                <li className="sidebar-menu__list-item active">
-                    <LineStyle className="sidebar-menu__icon" fontSize="small" /> Home
-                </li>
-                <li className="sidebar-menu__list-item">
-                    <Timeline className="sidebar-menu__icon" fontSize="small" /> Analytics
-                </li>
-                <li className="sidebar-menu__list-item">
-                    <TrendingUp className="sidebar-menu__icon" fontSize="small" /> Sales
-                </li>
+                {renderListItems()}
             </ul>
         </div>
     )

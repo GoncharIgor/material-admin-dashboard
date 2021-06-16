@@ -1,3 +1,5 @@
+@use "../../styles/mixins";
+
 .topbar {
     position: sticky;
     top: 0;
@@ -35,13 +37,12 @@
 }
 
 .top-icon-badge {
-    width: 15px;
-    height: 15px;
+    @include mixins.avatar(15);
+
     position: absolute;
     top: -5px;
     right: 0;
     background-color: red;
-    border-radius: 50%;
     color: white;
     display: flex;
     align-items: center;
@@ -50,8 +51,7 @@
 }
 
 .top-avatar {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
+    @include mixins.avatar();
+
     cursor: pointer;
 }

@@ -1,3 +1,5 @@
+@use "../../../styles/mixins";
+
 .widget-small__list-item {
   display: flex;
   align-items: center;
@@ -5,15 +7,13 @@
   margin: 20px 0;
 
   img {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    object-fit: cover;
+    @include mixins.avatar();
   }
 
   .widget-small__user {
     display: flex;
     flex-direction: column;
+    text-align: center;
 
     .widget-small__user-name {
       font-weight: 600;

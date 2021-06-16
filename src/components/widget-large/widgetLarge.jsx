@@ -1,8 +1,44 @@
 import './widget-large.scss';
+import UserPayment from "./user-payment/UserPayment";
+
+const usersPayments = [
+    {
+        name: 'Anna Gonchar',
+        avatar: 'https://picsum.photos/200',
+        date: '2 Jun 2021',
+        amount: '122.00',
+        status: 'approved'
+    },
+    {
+        name: 'Igor Gonchar',
+        avatar: 'https://picsum.photos/id/1025/200',
+        date: '22 Jun 2021',
+        amount: '122.00',
+        status: 'pending'
+    },
+    {
+        name: 'Igor Gonchar',
+        avatar: 'https://picsum.photos/id/1025/200',
+        date: '2 Jul 2021',
+        amount: '122.00',
+        status: 'declined'
+    },
+    {
+        name: 'Igor Gonchar',
+        avatar: 'https://picsum.photos/id/1025/200',
+        date: '11 Jun 2021',
+        amount: '122.00',
+        status: 'approved'
+    },
+]
 
 export default function WidgetLarge() {
-    const Button = ({type}) => {
-        return (<button className={`widget-large__button ${type}`}>{type}</button>);
+    function renderUsersPayments() {
+        return usersPayments.map(userPayment => {
+            return (
+                <UserPayment userPayment={userPayment} key={`${userPayment.name}-${userPayment.date}`}/>
+            )
+        })
     }
 
     return (
@@ -11,63 +47,17 @@ export default function WidgetLarge() {
                 Latest Transactions
             </h3>
             <table className="widget-large__table">
+                <thead>
                 <tr className="widget-large__tr">
                     <th className="widget-large__th"> Customer</th>
                     <th className="widget-large__th"> Date</th>
                     <th className="widget-large__th"> Amount</th>
                     <th className="widget-large__th"> Status</th>
                 </tr>
-                <tr className="widget-large__tr">
-                    <td className="widget-large__user">
-                        <img src="https://i3.ytimg.com/vi/et8xNAc2ic8/maxresdefault.jpg" alt="user avatar"
-                             className="widget-large__img"/>
-                        <span className="widget-large__name">Igor Gonchar</span>
-                    </td>
-                    <td className="widget-large__date">2 Jun 2021</td>
-                    <td className="widget-large__amount">122.00 $</td>
-                    <td className="widget-large__status">
-                        <Button type="approved"/>
-                    </td>
-                </tr>
-
-                <tr className="widget-large__tr">
-                    <td className="widget-large__user">
-                        <img src="https://i3.ytimg.com/vi/et8xNAc2ic8/maxresdefault.jpg" alt="user avatar"
-                             className="widget-large__img"/>
-                        <span className="widget-large__name">Igor Gonchar</span>
-                    </td>
-                    <td className="widget-large__date">2 Jun 2021</td>
-                    <td className="widget-large__amount">122.00 $</td>
-                    <td className="widget-large__status">
-                        <Button type="pending"/>
-                    </td>
-                </tr>
-
-                <tr className="widget-large__tr">
-                    <td className="widget-large__user">
-                        <img src="https://i3.ytimg.com/vi/et8xNAc2ic8/maxresdefault.jpg" alt="user avatar"
-                             className="widget-large__img"/>
-                        <span className="widget-large__name">Igor Gonchar</span>
-                    </td>
-                    <td className="widget-large__date">2 Jun 2021</td>
-                    <td className="widget-large__amount">122.00 $</td>
-                    <td className="widget-large__status">
-                        <Button type="declined"/>
-                    </td>
-                </tr>
-
-                <tr className="widget-large__tr">
-                    <td className="widget-large__user">
-                        <img src="https://i3.ytimg.com/vi/et8xNAc2ic8/maxresdefault.jpg" alt="user avatar"
-                             className="widget-large__img"/>
-                        <span className="widget-large__name">Igor Gonchar</span>
-                    </td>
-                    <td className="widget-large__date">2 Jun 2021</td>
-                    <td className="widget-large__amount">122.00 $</td>
-                    <td className="widget-large__status">
-                        <Button type="approved"/>
-                    </td>
-                </tr>
+                </thead>
+                <tbody>
+                {renderUsersPayments()}
+                </tbody>
             </table>
         </div>
     )
