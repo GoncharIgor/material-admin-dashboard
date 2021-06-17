@@ -1,57 +1,61 @@
 @use "../../styles/mixins";
 
 .topbar {
-    position: sticky;
-    top: 0;
-    width: 100%;
-    height: 50px;
-    background-color: white;
-    z-index: 10;
-}
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: 50px;
+  background-color: white;
+  z-index: 10;
 
-.topbar-wrapper {
+  &-wrapper {
     height: 100%;
     padding: 0 20px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-}
 
-.logo {
-    font-weight: bold;
-    font-size: 30px;
-    color: darkblue;
-    cursor: pointer;
-}
+    .top-left {
+      text-decoration: none;
 
-.top-right {
-    display: flex;
-    align-items: center;
-}
+      .logo {
+        font-weight: bold;
+        font-size: 30px;
+        color: darkblue;
+        cursor: pointer;
+      }
+    }
 
-.topbar-icons-container {
-    position: relative;
-    cursor: pointer;
-    margin-right: 10px;
-    color: #555;
-}
+    .top-right {
+      display: flex;
+      align-items: center;
 
-.top-icon-badge {
-    @include mixins.avatar(15);
+      .topbar-icons-container {
+        position: relative;
+        cursor: pointer;
+        margin-right: 10px;
+        color: #555;
 
-    position: absolute;
-    top: -5px;
-    right: 0;
-    background-color: red;
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 10px;
-}
+        .top-icon-badge {
+          @include mixins.avatar(15);
 
-.top-avatar {
-    @include mixins.avatar();
+          position: absolute;
+          top: -5px;
+          right: 0;
+          background-color: red;
+          color: white;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 10px;
+        }
+      }
 
-    cursor: pointer;
+      .top-avatar {
+        @include mixins.avatar();
+
+        cursor: pointer;
+      }
+    }
+  }
 }

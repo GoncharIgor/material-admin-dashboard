@@ -1,4 +1,5 @@
 import {NotificationsNone, Language, Settings} from '@material-ui/icons';
+import {Link} from "react-router-dom";
 
 import './topbar.scss';
 
@@ -6,9 +7,9 @@ export default function Topbar() {
     return (
         <div className="topbar">
             <div className="topbar-wrapper">
-                <div className="top-left">
+                <Link to="/" className="top-left">
                     <span className="logo">IgorGo</span>
-                </div>
+                </Link>
                 <div className="top-right">
                     <div className="topbar-icons-container">
                         <NotificationsNone />

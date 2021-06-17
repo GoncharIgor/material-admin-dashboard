@@ -1,4 +1,4 @@
-import {BrowserRouter, Switch, Route} from "react-router-dom";
+import {BrowserRouter, Switch, Route, Redirect} from "react-router-dom";
 
 import Topbar from "./components/topbar/Topbar";
 import Sidebar from "./components/sidebar/Sidebar";
@@ -20,6 +20,7 @@ function App() {
                     <Route path="/users" exact>
                         <UserList />
                     </Route>
+                    <Redirect from="/Home" to="/" />
                 </Switch>
             </div>
         </BrowserRouter>
