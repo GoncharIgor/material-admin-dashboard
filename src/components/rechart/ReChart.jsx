@@ -6,7 +6,7 @@ export default function ReChart({title, data, dataKey}) {
         <div className="chart">
             <h3 className="chart__title">{title}</h3>
             {/* aspect={4/1} - if width = 4 units, then height will be 1 unit */}
-            <ResponsiveContainer width="100%" aspect={4 / 1}>
+            <ResponsiveContainer width="100%" aspect={4}>
                 <LineChart data={data}>
                     {/* will take values from data.name property to draw a scale on x axis*/}
                     {/* stroke - color of x axis */}

@@ -1,4 +1,4 @@
-import {DataGrid} from '@material-ui/data-grid';
+import {DataGrid} from '@mui/x-data-grid'
 import {DeleteOutline} from '@material-ui/icons';
 
 import './user-list.scss';
@@ -19,6 +19,7 @@ export default function UserList() {
             field: 'user',
             headerName: 'User',
             width: 200,
+            // params.row - default parameter from rows data array
             // renderCell - creating column rule
             renderCell: (params) => {
                 return (
